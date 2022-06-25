@@ -1,0 +1,53 @@
+body {
+  background-color: black;
+}
+.rick {
+  min-height: 100vh;
+  margin: auto;
+  display: flex;
+}
+.cont {
+  display: none;
+}
+.cont__header {
+  color: white;
+}
+.roll {
+  display: none;
+}
+.border {
+  background-color: yellow;
+  margin: auto;
+  width: 60%;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 400;
+}
+.thumbnail {
+  max-width: 100%;
+  z-index: 0;
+}
+.play-button {
+  position: absolute;
+  z-index: 300;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.play-button svg {
+  fill: rgba(0, 0, 0, 0.7);
+  transition: 0.2s;
+}
+.white {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 299;
+}
+.border:hover .play-button svg {
+  fill: red;
+}

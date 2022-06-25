@@ -1,0 +1,15 @@
+.main {
+  background-color: var(--primary);
+  background: linear-gradient(var(--primaryhover), var(--primary));
+  padding-bottom: 50px;
+}
+.image--rick {
+  height: 250px;
+  border-radius: 50%;
+}
+.content {
+  width: 70%;
+  max-width: 800px;
+  min-width: 250px;
+  margin: 60px auto;
+}
