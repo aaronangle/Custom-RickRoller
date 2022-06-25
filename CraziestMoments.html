@@ -48,44 +48,112 @@
     <div class="roll">
       <img src="./assets/images/rickroll.gif" alt="" class="rick" />
       <audio src="./assets/images/rollmusic.mp3" id="song"></audio>
+      <div class="holder">
+        <div class="slider-cont fc-col">
+          <h1 class="m-0 text--center">You just got Rick Rolled By:</h1>
+          <h1 class="mt-0 text--underline text--center name">Anonymous</h1>
+          <img src="https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg" alt="Profile Pic" class="pic mb-1" />
+          <p class="message"></p>
+        </div>
+        <div class="inner-slider fc-col">
+          <div style="overflow: hidden" class="angle">
+            <svg preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" style="fill: #f5f8fa; width: 100%; height: 60px; transform: rotate(180deg) scaleX(-1)">
+              <path d="M1200 120L0 16.48V0h1200v120z" />
+            </svg>
+          </div>
+          <a href="create.html" class="btn">Create a Rick Roll</a>
+          <div class="fc-row mt-1">
+            <div class="m-1">
+              <a href="https://www.youtube.com/c/MemeTank10" class="hover">
+                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" style="fill: #ff0000">
+                  <path
+                    d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765 1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6 5.207 3.005-5.212 2.995z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+            <div class="m-1">
+              <a href="https://twitter.com/MemeTank10" class="hover">
+                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" style="fill: #1d9bf0">
+                  <path
+                    d="M19.633 7.997c.013.175.013.349.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.324.037.636.05.973.05a8.07 8.07 0 0 0 5.001-1.721 4.036 4.036 0 0 1-3.767-2.793c.249.037.499.062.761.062.361 0 .724-.05 1.061-.137a4.027 4.027 0 0 1-3.23-3.953v-.05c.537.299 1.16.486 1.82.511a4.022 4.022 0 0 1-1.796-3.354c0-.748.199-1.434.548-2.032a11.457 11.457 0 0 0 8.306 4.215c-.062-.3-.1-.611-.1-.923a4.026 4.026 0 0 1 4.028-4.028c1.16 0 2.207.486 2.943 1.272a7.957 7.957 0 0 0 2.556-.973 4.02 4.02 0 0 1-1.771 2.22 8.073 8.073 0 0 0 2.319-.624 8.645 8.645 0 0 1-2.019 2.083z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+            <div class="m-1">
+              <a href="https://www.redbubble.com/people/YodaJuan4Me/shop" class="hover">
+                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" style="fill: #fe0000">
+                  <path
+                    d="M12.002 2.005 12 2.004c-5.52 0-9.996 4.475-9.996 9.995 0 5.521 4.477 9.998 9.996 9.998 5.521 0 9.996-4.475 9.996-9.997 0-5.52-4.475-9.995-9.994-9.995zm.162 13.53a.267.267 0 0 1-.174.066v.001H6.455a.268.268 0 0 1-.266-.268V8.646c0-.148.119-.268.266-.268h2.589c1.612 0 2.576.87 2.576 2.327 0 .969-.486 1.729-1.272 2.039l1.842 2.413a.269.269 0 0 1-.026.378zm3.695.068h-2.665a.268.268 0 0 1-.266-.269V8.646c0-.148.119-.267.266-.267h2.472c1.853 0 2.242 1.091 2.242 2.007 0 .529-.141.949-.421 1.258.681.28 1.047.913 1.047 1.827 0 1.335-1.001 2.132-2.675 2.132z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
   <script>
-    var cont = document.querySelector('.cont');
-    var roll = document.querySelector('.roll');
-    playSong(true);
+    (function () {
+      var cont = document.querySelector('.cont');
+      var roll = document.querySelector('.roll');
+      playSong(true);
 
-    var play = document.querySelector('#play');
-    play.addEventListener('click', function () {
-      console.log('c');
-      playSong(false);
-    });
+      var play = document.querySelector('#play');
+      play.addEventListener('click', function () {
+        playSong(false);
+      });
 
-    function playSong(first) {
-      document
-        .getElementById('song')
-        .play()
-        .then(() => {
-          //show roll
-          showRick();
-        })
-        .catch(err => {
-          if (first) {
-            showCont();
-          } else {
+      function playSong(first) {
+        document
+          .getElementById('song')
+          .play()
+          .then(() => {
             showRick();
-          }
-        });
-    }
+          })
+          .catch(err => {
+            if (first) {
+              showCont();
+            } else {
+              showRick();
+            }
+          });
+      }
 
-    function showCont() {
-      cont.style.display = 'block';
-      roll.style.display = 'none';
-    }
+      function showCont() {
+        cont.style.display = 'block';
+        roll.style.display = 'none';
+      }
 
-    function showRick() {
-      cont.style.display = 'none';
-      roll.style.display = 'block';
-    }
+      function showRick() {
+        cont.style.display = 'none';
+        roll.style.display = 'block';
+      }
+
+      var queryString = window.location.search;
+      var urlParams = new URLSearchParams(queryString);
+      var nameParam = urlParams.get('name');
+      var imgParam = urlParams.get('img');
+      var messageParam = urlParams.get('message');
+      var name = document.querySelector('.name');
+      var img = document.querySelector('.pic');
+      var message = document.querySelector('.message');
+
+      if (nameParam) {
+        name.innerHTML = nameParam.replace(/['"]+/g, '');
+      }
+      if (imgParam) {
+        img.src = imgParam.replace(/['"]+/g, '');
+      }
+      if (messageParam) {
+        message.innerHTML = messageParam.replace(/['"]+/g, '');
+      }
+
+      img.addEventListener('error', function () {
+        img.src = 'https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg';
+      });
+    })();
   </script>
 </html>

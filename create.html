@@ -31,14 +31,49 @@
       <p class="muted">Let your friends know who the Rick Roll is from</p>
       <input type="text" placeholder="Name" class="input" name="name" id="name" />
       <label for="picture">Link to Profile Pic</label>
-      <p class="muted">Leave a link to an image for your victims</p>
+      <p class="muted">Leave a link to your profile pic</p>
       <input type="text" placeholder="https://twitter/yourprofilepic" class="input" name="picture" id="picture" />
       <label for="message">Message</label>
       <p class="muted">Leave a message to your victims</p>
       <input type="text" placeholder="Message" class="input" name="message" id="message" />
       <div class="fc-row pt-1">
-        <button class="btn-primary">Generate Link</button>
+        <button class="btn-primary generate">Generate Link</button>
+      </div>
+      <div class="copy-cont fc-row mt-1">
+        <div class="svg-cont copy" title="copy link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="svg">
+            <path
+              d="M20 2H10c-1.103 0-2 .897-2 2v4H4c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2h10c1.103 0 2-.897 2-2v-4h4c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zM4 20V10h10l.002 10H4zm16-6h-4v-4c0-1.103-.897-2-2-2h-4V4h10v10z"
+            ></path>
+          </svg>
+        </div>
+        <a href="" class="text--primary text--underline url"></a>
       </div>
     </div>
   </body>
+  <script>
+    (function () {
+      var generate = document.querySelector('.generate');
+
+      generate.addEventListener('click', function () {
+        var name = document.getElementById('name');
+        var picture = document.getElementById('picture');
+        var message = document.getElementById('message');
+        var url = 'http://127.0.0.1:5500/CraziestMoments.html?name=' + name.value + '&img=' + picture.value + '&message=' + message.value;
+        var htmlURL = document.querySelector('.url');
+        htmlURL.innerHTML = encodeURI(url);
+        htmlURL.setAttribute('href', encodeURI(url));
+        var copyCont = document.querySelector('.copy-cont');
+        copyCont.style.display = 'flex';
+      });
+
+      var copyButton = document.querySelector('.copy');
+
+      copyButton.addEventListener('click', function () {
+        var url = document.querySelector('.url');
+        var href = url.getAttribute('href');
+        navigator.clipboard.writeText(href);
+      });
+    })();
+  </script>
 </html>

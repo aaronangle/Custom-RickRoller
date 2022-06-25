@@ -5,3 +5,10 @@
   margin: auto;
   padding-top: 40px;
 }
+.copy-cont {
+  display: none;
+}
+
+.url {
+  word-break: break-all;
+}

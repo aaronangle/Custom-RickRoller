@@ -318,6 +318,7 @@ input:focus {
 
 .svg-cont:hover {
   background-color: #1da0f213;
+  cursor: pointer;
 }
 
 .svg-cont-white:hover {
