@@ -135,3 +135,10 @@ body {
     -webkit-transform: translateX(0%);
   }
 }
+
+#my-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}

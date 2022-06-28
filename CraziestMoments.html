@@ -93,6 +93,7 @@
           </div>
         </div>
       </div>
+      <canvas id="my-canvas"></canvas>
     </div>
   </body>
   <script src="./assets/scripts/encrypt.js"></script>
@@ -124,6 +125,7 @@
               showCont();
             } else {
               showRick();
+              played = true;
             }
           });
       }
@@ -136,6 +138,15 @@
       function showRick() {
         cont.style.display = 'none';
         roll.style.display = 'block';
+        setTimeout(() => {
+          var confettiElement = document.getElementById('my-canvas');
+          var confettiSettings = { target: confettiElement };
+          var confetti = new ConfettiGenerator(confettiSettings);
+          confetti.render();
+          setTimeout(() => {
+            confetti.clear();
+          }, 8000);
+        }, 6600);
       }
 
       var queryString = window.location.search;
@@ -164,4 +175,5 @@
       });
     })();
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.18/dist/index.min.js" async defer></script>
 </html>
