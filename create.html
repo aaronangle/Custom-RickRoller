@@ -12,6 +12,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/create.css" />
+
+    <meta name="twitter:site" content="@publisher_handle" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Create a Custom Rick Roll" />
+    <meta
+      name="twitter:description"
+      content="Trick your friends into getting Rick Rolled, while also leaving your name and profile picture so they know it was from you. Try it out it's a lot of fun."
+    />
+    <meta name="twitter:creator" content="@MemeTank10" />
+    <meta name="twitter:image" content="https://my-names-not-rick.netlify.app/assets/images/TwitterSocialImage.jpg" />
+
+    <meta property="og:title" content="Create a Custom Rick Roll" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://my-names-not-rick.netlify.app/" />
+    <meta property="og:image" content="https://my-names-not-rick.netlify.app/assets/images/FacebookSocialImage.jpg" />
+    <meta
+      property="og:description"
+      content="Trick your friends into getting Rick Rolled, while also leaving your name and profile picture so they know it was from you. Try it out it's a lot of fun."
+    />
+    <meta property="og:site_name" content="Create a Custom Rick Roll" />
     <title>Create a Rick Roll</title>
   </head>
   <body>
@@ -59,7 +79,7 @@
         var name = document.getElementById('name');
         var picture = document.getElementById('picture');
         var message = document.getElementById('message');
-        var url = 'https://62ba62c68d76490943fa2c4e--subtle-puffpuff-c5464a.netlify.app/craziestmoments?name=' + name.value + '&img=' + picture.value + '&message=' + message.value;
+        var url = 'https://my-names-not-rick.netlify.app/craziestmoments?name=' + name.value + '&img=' + picture.value + '&message=' + message.value;
         var htmlURL = document.querySelector('.url');
         htmlURL.innerHTML = encodeURI(url);
         htmlURL.setAttribute('href', encodeURI(url));
