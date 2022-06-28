@@ -15,13 +15,13 @@
     <meta name="twitter:description" content="Some of the craziest moments of 2022." />
     <meta name="twitter:creator" content="@MemeTank10" />
     <!-- card images must be at least 280x150px -->
-    <meta name="twitter:image" content="./assets/images/AwesomeTwitterImage.png" />
+    <meta name="twitter:image" content="https://my-names-not-rick.netlify.app/assets/images/AwesomeTwitterImage.png" />
 
     <!-- data for Facebook -->
     <meta property="og:title" content="Craziest Moments of 2022" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="http://www.example.com/" />
-    <meta property="og:image" content="./assets/images/AwesomeFacebookeImage.png" />
+    <meta property="og:image" content="https://my-names-not-rick.netlify.app/assets/images/AwesomeFacebookImage.jpg" />
     <meta property="og:description" content="Some of the craziest moments of 2022." />
     <meta property="og:site_name" content="Craziest Moments of 2022" />
     <title>Craziest Moments of 2022</title>
@@ -97,6 +97,7 @@
   </body>
   <script>
     (function () {
+      var played = false;
       var cont = document.querySelector('.cont');
       var roll = document.querySelector('.roll');
       playSong(true);
@@ -107,11 +108,14 @@
       });
 
       function playSong(first) {
+        if (played) return;
+
         document
           .getElementById('song')
           .play()
           .then(() => {
             showRick();
+            played = true;
           })
           .catch(err => {
             if (first) {
