@@ -95,6 +95,8 @@
       </div>
     </div>
   </body>
+  <script src="./assets/scripts/encrypt.js"></script>
+
   <script>
     (function () {
       var played = false;
@@ -146,13 +148,15 @@
       var message = document.querySelector('.message');
 
       if (nameParam) {
-        name.innerHTML = nameParam.replace(/['"]+/g, '');
+        name.innerHTML = decrypt(nameParam.replace(/['"]+/g, ''));
       }
       if (imgParam) {
         img.src = imgParam.replace(/['"]+/g, '');
+      } else {
+        img.src = 'https://avatars.dicebear.com/api/pixel-art-neutral/' + nameParam + '.svg';
       }
       if (messageParam) {
-        message.innerHTML = messageParam.replace(/['"]+/g, '');
+        message.innerHTML = decrypt(messageParam.replace(/['"]+/g, ''));
       }
 
       img.addEventListener('error', function () {

@@ -12,3 +12,12 @@
 .url {
   word-break: break-all;
 }
+.copy-toast {
+  color: #84c685;
+  background-color: #e7f4e7;
+  padding: 5px 10px;
+  border-radius: 10px;
+  text-align: center;
+  opacity: 0;
+  transition: 0.3s;
+}
